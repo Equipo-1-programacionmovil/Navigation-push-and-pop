@@ -1,4 +1,6 @@
 import 'package:app/componets/btn.dart';
+import 'package:app/pages/page_2.dart';
+import 'package:app/pages/page_3.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
@@ -17,16 +19,35 @@ class page1 extends StatelessWidget {
             //Aqui ya pueden personaliar todo lo quieran y agregar mas componentes si necesitan.
             const SizedBox(height: 50),
             const Text(
-              'Titulo',
+              'Pagina 1',
               style: TextStyle(
                   fontSize: 30,
                   color: Color.fromARGB(222, 255, 254, 254),
                   fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 50),
-            MyButton(
-              onPressed: () {},
-              text: 'Mover',
+            Column(
+              children: [
+                MyButton(
+                  text: 'Pagina 2',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const page2()),
+                    );
+                  },
+                ),
+                const SizedBox(height: 50),
+                MyButton(
+                  text: 'pagina 3',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const page3()),
+                    );
+                  },
+                ),
+              ],
             ),
 
             //Aqui es final Children.
